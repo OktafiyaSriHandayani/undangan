@@ -1,5 +1,14 @@
 
 // =============================
+// SUPABASE
+// =============================
+
+const SUPABASE_URL = "https://xmfafsaahdvyevbmewiy.supabase.co";
+const SUPABASE_KEY = "sb_publishable_daE2p_Kl85iMgN82nAnwmA_2dIP8pdu";
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+
+// =============================
 // DATA UNDANGAN
 // =============================
 
@@ -216,42 +225,84 @@ function revealAddress() {
 
 document.getElementById("rsvpForm").addEventListener(
     "submit",
-    function(event) {
+    async function(event) {
 
         event.preventDefault();
 
-        const name = document.getElementById("rsvpName").value;
+        const submitBtn = this.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Mengirim...";
+
+        const name       = document.getElementById("rsvpName").value.trim();
         const attendance = document.getElementById("attendance").value;
-        const count = document.getElementById("guestCount").value;
-        const message = document.getElementById("message").value;
+        const count      = parseInt(document.getElementById("guestCount").value) || 1;
+        const message    = document.getElementById("message").value.trim();
 
-        const response = {
-            name: name,
-            attendance: attendance,
-            guests: count,
-            message: message,
-            date: new Date().toISOString()
-        };
+        const { error } = await db
+            .from("rsvp")
+            .insert({
+                nama        : name,
+                kehadiran   : attendance,
+                jumlah_tamu : count,
+                ucapan      : message || null
+            });
 
-        // Simpan sementara di browser
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Kirim Konfirmasi";
 
-        let responses = JSON.parse(
-            localStorage.getItem("weddingRSVP") || "[]"
-        );
+        if (error) {
+            alert("Gagal mengirim, coba lagi.");
+            return;
+        }
 
-        responses.push(response);
-
-        localStorage.setItem(
-            "weddingRSVP",
-            JSON.stringify(responses)
-        );
-
-        alert("Terima kasih! Konfirmasi berhasil dikirim.");
+        alert("Terima kasih " + name + "! Konfirmasi berhasil dikirim. \uD83C\uDF3C");
 
         this.reset();
 
+        if (guest) {
+            document.getElementById("rsvpName").value = guest;
+        }
+
+        loadUcapan();
     }
 );
+
+
+// =============================
+// LOAD UCAPAN TAMU
+// =============================
+
+async function loadUcapan() {
+
+    const container = document.getElementById("ucapanList");
+    if (!container) return;
+
+    const { data, error } = await db
+        .from("rsvp")
+        .select("nama, kehadiran, ucapan, created_at")
+        .not("ucapan", "is", null)
+        .order("created_at", { ascending: false })
+        .limit(20);
+
+    if (error || !data || data.length === 0) {
+        container.innerHTML = "<p class='no-ucapan'>Belum ada ucapan.</p>";
+        return;
+    }
+
+    container.innerHTML = data.map(r => `
+        <div class="ucapan-item">
+            <div class="ucapan-header">
+                <span class="ucapan-nama">${r.nama}</span>
+                <span class="ucapan-status ${r.kehadiran === 'Hadir' ? 'hadir' : 'tidak-hadir'}">
+                    ${r.kehadiran === 'Hadir' ? '\u2713 Hadir' : '\u2717 Tidak Hadir'}
+                </span>
+            </div>
+            <p class="ucapan-teks">"${r.ucapan}"</p>
+        </div>
+    `).join("");
+}
+
+loadUcapan();
 
 
 // =============================

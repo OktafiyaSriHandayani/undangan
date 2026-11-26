@@ -665,6 +665,79 @@ form textarea {
     margin-top: 20px;
 }
 
+.full-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ==========================
+   UCAPAN WALL
+========================== */
+
+.ucapan-wall {
+    margin-top: 25px;
+}
+
+.ucapan-item {
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blue);
+    box-shadow: 0 4px 12px var(--shadow);
+    animation: contentEnter 0.5s ease both;
+}
+
+.ucapan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.ucapan-nama {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--blue-dark);
+}
+
+.ucapan-status {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ucapan-status.hadir {
+    background: rgba(145, 182, 212, 0.2);
+    color: var(--blue-dark);
+    border: 1px solid var(--blue);
+}
+
+.ucapan-status.tidak-hadir {
+    background: rgba(217, 205, 169, 0.25);
+    color: #8a7a4a;
+    border: 1px solid var(--line);
+}
+
+.ucapan-teks {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    font-style: italic;
+}
+
+.no-ucapan {
+    text-align: center;
+    font-size: 12px;
+    color: #aab5be;
+    padding: 20px 0;
+}
+
 
 /* ==========================
    GIFT
