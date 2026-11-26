@@ -3,8 +3,8 @@
 // SUPABASE
 // =============================
 
-const SUPABASE_URL = "https://xmfafsaahdvyevbmewiy.supabase.co";
-const SUPABASE_KEY = "sb_publishable_daE2p_Kl85iMgN82nAnwmA_2dIP8pdu";
+const SUPABASE_URL = "https://tibzebrbhylirjuoslga.supabase.co";
+const SUPABASE_KEY = "sb_publishable_GJEgx3m3FEovFgJ4hZQdLg_UO4LPzkB";
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
@@ -251,6 +251,7 @@ document.getElementById("rsvpForm").addEventListener(
         submitBtn.textContent = "Kirim Konfirmasi";
 
         if (error) {
+            console.error("Supabase RSVP error:", error);
             alert("Gagal mengirim, coba lagi.");
             return;
         }
