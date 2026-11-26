@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Daisy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+
+    <!-- COVER -->
+    <div id="cover" class="cover-page">
+
+        <div class="cover-paper">
+            <img src="assets/photos/daisy.png" class="flower cover-flower-top" alt="">
+            <img src="assets/photos/daisy.png" class="flower cover-flower-bottom" alt="">
+
+            <div class="cover-frame">
+                <p class="small-title">THE WEDDING OF</p>
+
+                <div class="cover-photo">
+                    <img src="assets/photos/cover-pengantin.png" alt="Foto pengantin">
+                </div>
+
+                <h1 class="couple-name cover-name">
+                    Aulia <span>&</span> Fajar
+                </h1>
+
+                <div class="divider-flower">
+                    <span></span>
+                    <img src="assets/photos/daisy.png" alt="">
+                    <span></span>
+                </div>
+
+                <p class="cover-date">12 . 12 . 2026</p>
+
+                <p class="guest-label">Kepada Yth.</p>
+                <h3 id="guestName">Tamu Undangan</h3>
+
+                <button class="open-button" onclick="openInvitation()">
+                    <span>✧</span> Buka Undangan <span>✧</span>
+                </button>
+
+                <p class="cover-footer">WE INVITE YOU TO CELEBRATE OUR LOVE</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mainApp" class="main-app hidden">
+
+        <div class="app-background"></div>
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="header-logo">A <span>&</span> F</div>
+            <p>THE WEDDING CELEBRATION</p>
+        </header>
+
+
+        <!-- HOME -->
+        <section class="page active" id="home">
+
+            <div class="page-content home-content">
+
+                <div class="decor-heading">
+                    <p class="small-title">SAVE THE DATE</p>
+                    <h1 class="couple-name">
+                        Aulia <span>&</span> Fajar
+                    </h1>
+                    <p class="subtitle">A beautiful beginning of forever</p>
+                </div>
+
+                <div class="home-image-frame">
+                    <img src="assets/photos/cover-pengantin.png" alt="Foto pasangan">
+                    <div class="photo-caption">Together, with love</div>
+                </div>
+
+                <div class="date-card">
+                    <p class="small-title">WE ARE GETTING MARRIED</p>
+                    <h2>12 December 2026</h2>
+                    <p>Sabtu • 08.00 WIB</p>
+
+                    <div class="countdown" id="countdown">
+                        <div><span id="days">00</span><small>Hari</small></div>
+                        <div><span id="hours">00</span><small>Jam</small></div>
+                        <div><span id="minutes">00</span><small>Menit</small></div>
+                        <div><span id="seconds">00</span><small>Detik</small></div>
+                    </div>
+
+                    <button class="outline-button" onclick="saveCalendar()">
+                        Simpan Tanggal
+                    </button>
+                </div>
+
+                <div class="quote-card">
+                    <img src="assets/photos/daisypng" class="quote-flower" alt="">
+                    <p class="arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا</p>
+                    <p>
+                        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia
+                        menciptakan pasangan-pasangan untukmu dari jenismu sendiri."
+                    </p>
+                    <small>QS. Ar-Rum: 21</small>
+                </div>
+
+            </div>
+        </section>
+
+
+    
+        <section class="page" id="couple">
+
+            <div class="page-content">
+
+                <div class="section-heading">
+                    <p class="small-title">OUR BELOVED</p>
+                    <h2>Meet The Couple</h2>
+                    <p>Two hearts, one beautiful journey.</p>
+                </div>
+
+                <div class="person-card">
+                    <div class="portrait-frame">
+                        <img src="assets/photos/foto-mempelai-wanita.png" alt="Foto mempelai wanita">
+                    </div>
+
+                    <h2 class="person-name">Aulia Putri</h2>
+                    <p class="person-desc">
+                        Putri dari Bapak Sugoro<br>
+                        & Ibu Siti
+                    </p>
+                    <div class="social-line">♡</div>
+                </div>
+
+                <div class="and-symbol">&</div>
+
+                <div class="person-card">
+                    <div class="portrait-frame">
+                        <img src="assets/photos/foto-mempelai-pria.png" alt="Foto mempelai pria">
+                    </div>
+
+                    <h2 class="person-name">Fajar Ramadhan</h2>
+                    <p class="person-desc">
+                        Putra dari Bapak Agung<br>
+                        & Ibu Surada
+                    </p>
+                    <div class="social-line">♡</div>
+                </div>
+
+                <div class="quote-card">
+                    <h3>Our Love Story</h3>
+                    <p>
+                        Dari dua perjalanan yang berbeda, Allah mempertemukan
+                        kami dalam satu tujuan. Dengan segala doa dan harapan,
+                        kami ingin memulai kisah baru bersama.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- EVENT -->
+        <section class="page" id="event">
+
+            <div class="page-content">
+
+                <div class="section-heading">
+                    <p class="small-title">THE SPECIAL DAY</p>
+                    <h2>Wedding Events</h2>
+                    <p>Dengan penuh kebahagiaan, kami mengundang Anda.</p>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="assets/photos/background.png" alt="">
+                    </div>
+
+                    <div class="event-details">
+                        <p class="event-label">✧ AKAD NIKAH ✧</p>
+                        <h2>Sabtu</h2>
+                        <h3>12 Desember 2026</h3>
+                        <p>08.00 – 10.00 WIB</p>
+
+                        <div class="event-divider"></div>
+
+                        <p class="event-label">LOCATION</p>
+                        <h3>Gedung Pernikahan</h3>
+                        <p>Alamat lengkap lokasi pernikahan</p>
+
+                        <a href="https://maps.app.goo.gl/a7TnBgTx4UnHVeFi7" target="_blank" class="outline-button">
+                            Buka Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-details">
+                        <p class="event-label">✧ RESEPSI ✧</p>
+                        <h2>Sabtu</h2>
+                        <h3>12 Desember 2026</h3>
+                        <p>11.00 – 14.00 WIB</p>
+
+                        <div class="event-divider"></div>
+
+                        <p class="event-label">LOCATION</p>
+                        <h3>Gedung Pernikahan</h3>
+                        <p>Alamat lengkap lokasi pernikahan</p>
+
+                        <a href="https://maps.app.goo.gl/a7TnBgTx4UnHVeFi7" target="_blank" class="outline-button">
+                            Buka Google Maps
+                        </a>
+                    </div>  
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="page" id="rsvp">
+
+            <div class="page-content">
+
+                <div class="section-heading">
+                    <p class="small-title">KINDLY RESPOND</p>
+                    <h2>RSVP</h2>
+                    <p>Konfirmasi kehadiran Anda.</p>
+                </div>
+
+                <div class="form-card">
+
+                    <form id="rsvpForm">
+
+                        <label for="rsvpName">Nama</label>
+                        <input type="text" id="rsvpName" placeholder="Nama Anda" required>
+
+                        <label for="attendance">Konfirmasi Kehadiran</label>
+                        <select id="attendance" required>
+                            <option value="">Pilih kehadiran</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+
+                        <label for="guestCount">Jumlah Tamu</label>
+                        <select id="guestCount">
+                            <option value="1">1 orang</option>
+                            <option value="2">2 orang</option>
+                            <option value="3">3 orang</option>
+                            <option value="4">4 orang</option>
+                        </select>
+
+                        <label for="message">Ucapan & Doa</label>
+                        <textarea id="message" rows="4" placeholder="Tuliskan ucapan dan doa..."></textarea>
+
+                        <button type="submit" class="open-button full-button">
+                            Kirim Konfirmasi
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="quote-card">
+                    <h3>Ucapan & Doa</h3>
+                    <p>
+                        Semoga setiap doa yang baik menjadi bagian
+                        dari kebahagiaan kami.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- GIFT -->
+        <section class="page" id="gift">
+
+            <div class="page-content">
+
+                <div class="section-heading">
+                    <p class="small-title">WEDDING GIFT</p>
+                    <h2>Wedding Gift</h2>
+                    <p>
+                        Doa dan kehadiran Anda merupakan hadiah yang
+                        sangat berarti bagi kami.
+                    </p>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-top">
+                        <p>✧ DIGITAL GIFT ✧</p>
+                        <h2>Bank Transfer</h2>
+                    </div>
+
+                    <div class="bank-logo">BANK BCA</div>
+                    <p class="account-name">Aulia Putri</p>
+                    <h3 id="accountNumber">1234567890</h3>
+
+                    <button class="outline-button" onclick="copyAccount()">
+                        Salin Nomor Rekening
+                    </button>
+                </div>
+
+                <div class="gift-card address-card">
+
+                    <h2>Send a Gift</h2>
+                    <p>Jika ingin mengirimkan hadiah secara langsung:</p>
+
+                    <button class="open-button" onclick="revealAddress()">
+                        Buka Alamat
+                    </button>
+
+                    <div id="giftAddress" class="gift-address hidden">
+                        <p>Nama Penerima: Aulia & Fajar</p>
+                        <p>Alamat: Paku Jaya, South Tangerang City, Banten</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- GALLERY -->
+        <section class="page" id="gallery">
+
+            <div class="page-content">
+
+                <div class="section-heading">
+                    <p class="small-title">OUR MOMENTS</p>
+                    <h2>Photo Gallery</h2>
+                    <p>Captured with love.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/photos/momen1.png" alt="">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/photos/momen2.png" alt="">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/photos/momen3.png" alt="">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/photos/momen4.png" alt="">
+                    </div>
+                </div>
+
+                <div class="quote-card">
+                    <p>
+                        "The best is yet to come, and we are ready
+                        to embrace it together."
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CLOSING -->
+        <section class="page" id="closing">
+
+            <div class="page-content closing-content">
+
+                <img src="assets/photos/daisy.png" class="closing-flower" alt="">
+
+                <div class="section-heading">
+                    <p class="small-title">WITH LOVE & GRATITUDE</p>
+                    <h2>Thank You</h2>
+                </div>
+
+                <div class="closing-photo">
+                    <img src="assets/photos/cover-pengantin.png" alt="">
+                </div>
+
+                <h1 class="couple-name">Aulia <span>&</span> Fajar</h1>
+
+                <p class="closing-text">
+                    Terima kasih atas doa, kasih sayang dan kehadiran
+                    yang menjadi bagian dari hari bahagia kami.
+                </p>
+
+                <p class="closing-prayer">
+                    Semoga kami menjadi keluarga yang Sakinah,
+                    Mawaddah, Warahmah.
+                </p>
+
+                <p class="small-title">WITH LOVE, THE BRIDE & GROOM</p>
+
+            </div>
+        </section>
+
+
+        <nav class="bottom-nav">
+
+            <button class="nav-item active" data-page="home">
+                <span class="nav-icon">⌂</span>
+                <small>Home</small>
+            </button>
+
+            <button class="nav-item" data-page="couple">
+                <span class="nav-icon">♡</span>
+                <small>Couple</small>
+            </button>
+
+            <button class="nav-item" data-page="event">
+                <span class="nav-icon">▦</span>
+                <small>Event</small>
+            </button>
+
+            <button class="nav-item" data-page="rsvp">
+                <span class="nav-icon">✉</span>
+                <small>RSVP</small>
+            </button>
+
+            <button class="nav-item" data-page="gift">
+                <span class="nav-icon">♧</span>
+                <small>Gift</small>
+            </button>
+
+            <button class="nav-item" data-page="gallery">
+                <span class="nav-icon">▧</span>
+                <small>Gallery</small>
+            </button>
+
+            <button class="nav-item" data-page="closing">
+                <span class="nav-icon">✧</span>
+                <small>End</small>
+            </button>
+
+        </nav>
+
+        <!-- MUSIC BUTTON -->
+        <button class="music-button" id="musicButton" onclick="toggleMusic()">
+            ♫
+        </button>
+
+        <!-- WHATSAPP -->
+        <a class="whatsapp-button" href="#" onclick="contactWhatsApp(event)">
+            ☏
+        </a>
+
+        <audio id="weddingMusic" src="assets/music/WEDDING MUSIC RECEPTION MUSIC INSTRUMENTAL LOVE SONGS.mp3" loop></audio>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1014 @@
+
+/* ==========================
+   WEDDING DAISY THEME
+========================== */
+
+:root {
+    --blue: #91b6d4;
+    --blue-dark: #476984;
+    --blue-light: #dceaf4;
+    --yellow: #e8cb78;
+    --cream: #faf6ed;
+    --paper: #fffdf8;
+    --text: #52697b;
+    --line: #d9cda9;
+    --shadow: rgba(62, 85, 105, 0.13);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #e8edf1;
+    color: var(--text);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================
+   APP FRAME
+========================== */
+
+.app-shell {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main-app,
+.cover-page {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 0 35px rgba(40, 60, 80, 0.1);
+}
+
+.main-app {
+    padding-bottom: 95px;
+    isolation: isolate;
+}
+
+.app-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        linear-gradient(
+            rgba(255, 253, 248, 0.91),
+            rgba(250, 246, 237, 0.94)
+        ),
+        url("assets/flowers/floral-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.main-app::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.17;
+    z-index: -1;
+    background-image:
+        url("assets/flowers/floral-bg.jpg");
+    background-size: 500px;
+    mix-blend-mode: multiply;
+}
+
+
+/* ==========================
+   COVER
+========================== */
+
+.cover-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+        linear-gradient(
+            rgba(247, 245, 237, 0.8),
+            rgba(247, 245, 237, 0.9)
+        ),
+        url("assets/flowers/floral-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cover-paper {
+    position: relative;
+    width: 100%;
+    padding: 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: 0 15px 40px var(--shadow);
+    overflow: hidden;
+}
+
+.cover-frame {
+    position: relative;
+    min-height: 620px;
+    padding: 30px 20px;
+    border: 1px solid var(--line);
+    outline: 1px solid rgba(217, 205, 169, 0.35);
+    outline-offset: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flower {
+    position: absolute;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+.cover-flower-top {
+    width: 175px;
+    top: -20px;
+    right: -25px;
+    z-index: 2;
+    transform: rotate(10deg);
+}
+
+.cover-flower-bottom {
+    width: 180px;
+    left: -30px;
+    bottom: -35px;
+    z-index: 2;
+    transform: rotate(-20deg);
+}
+
+.small-title {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--blue-dark);
+    text-transform: uppercase;
+}
+
+.cover-photo {
+    width: 185px;
+    height: 245px;
+    margin: 28px auto 15px;
+    padding: 7px;
+    background: white;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 25px var(--shadow);
+    transform: rotate(-2deg);
+}
+
+.cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.couple-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: var(--blue-dark);
+    line-height: 1.2;
+}
+
+.couple-name span {
+    color: var(--yellow);
+}
+
+.cover-name {
+    margin-top: 8px;
+}
+
+.divider-flower {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.divider-flower span {
+    width: 45px;
+    height: 1px;
+    background: var(--line);
+}
+
+.divider-flower img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.cover-date {
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.guest-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+#guestName {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.open-button {
+    background: var(--blue-dark);
+    color: white;
+    border: 1px solid var(--blue-dark);
+    padding: 13px 24px;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.open-button:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+.cover-footer {
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.app-header {
+    text-align: center;
+    padding: 18px 15px 15px;
+    border-bottom: 1px solid rgba(217, 205, 169, 0.6);
+    background: rgba(255, 253, 248, 0.5);
+}
+
+.header-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 34px;
+    color: var(--blue-dark);
+}
+
+.header-logo span {
+    color: var(--yellow);
+}
+
+.app-header p {
+    font-size: 8px;
+    letter-spacing: 3px;
+    margin-top: 4px;
+}
+
+
+/* ==========================
+   PAGE SYSTEM
+========================== */
+
+.page {
+    display: none;
+    min-height: calc(100vh - 155px);
+    position: relative;
+}
+
+.page.active {
+    display: block;
+    animation: pageEnter 0.7s ease both;
+}
+
+.page-content {
+    position: relative;
+    padding: 30px 22px 40px;
+    animation: contentEnter 0.8s ease both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    margin: 10px 0;
+}
+
+.section-heading p:not(.small-title) {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   HOME
+========================== */
+
+.home-content {
+    padding-top: 35px;
+}
+
+.decor-heading {
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.decor-heading .couple-name {
+    font-size: 57px;
+    margin: 12px 0 8px;
+}
+
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.home-image-frame {
+    position: relative;
+    width: 88%;
+    margin: auto;
+    padding: 10px;
+    background: white;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 25px var(--shadow);
+    transform: rotate(1deg);
+}
+
+.home-image-frame img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.photo-caption {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    padding: 10px 0 5px;
+    font-size: 16px;
+}
+
+.date-card {
+    margin-top: 35px;
+    padding: 25px 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid var(--line);
+    outline: 1px solid rgba(217, 205, 169, 0.3);
+    outline-offset: 5px;
+}
+
+.date-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--blue-dark);
+    margin: 12px 0;
+}
+
+.date-card > p:not(.small-title) {
+    font-size: 12px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.countdown div {
+    background: var(--blue-light);
+    border: 1px solid rgba(145, 182, 212, 0.5);
+    padding: 12px 5px;
+}
+
+.countdown span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: var(--blue-dark);
+}
+
+.countdown small {
+    font-size: 9px;
+}
+
+.outline-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--blue-dark);
+    border: 1px solid var(--blue-dark);
+    border-radius: 30px;
+    padding: 11px 20px;
+    text-decoration: none;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.outline-button:hover {
+    background: var(--blue-light);
+}
+
+.quote-card {
+    position: relative;
+    padding: 30px 20px;
+    margin-top: 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--line);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.quote-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.quote-card small {
+    display: block;
+    margin-top: 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.arabic {
+    font-size: 24px !important;
+    margin-bottom: 20px;
+    line-height: 2 !important;
+}
+
+.quote-flower {
+    width: 100px;
+    position: absolute;
+    right: -15px;
+    top: -20px;
+    opacity: 0.9;
+}
+
+
+/* ==========================
+   COUPLE
+========================== */
+
+.person-card {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.portrait-frame {
+    width: 235px;
+    height: 320px;
+    padding: 8px;
+    background: white;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 25px var(--shadow);
+    margin: auto;
+}
+
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.person-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    font-weight: 400;
+    color: var(--blue-dark);
+    margin-top: 20px;
+}
+
+.person-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+.social-line {
+    color: var(--yellow);
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.and-symbol {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    color: var(--yellow);
+    font-size: 70px;
+}
+
+
+/* ==========================
+   EVENT
+========================== */
+
+.event-card {
+    margin: 25px 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.event-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.event-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--blue-dark);
+}
+
+.event-details h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.event-details h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.event-details > p:not(.event-label) {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.event-divider {
+    width: 65px;
+    height: 1px;
+    background: var(--line);
+    margin: 25px auto;
+}
+
+.event-details .outline-button {
+    margin-top: 20px;
+}
+
+
+/* ==========================
+   RSVP
+========================== */
+
+.form-card {
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+form label {
+    display: block;
+    font-size: 12px;
+    margin: 15px 0 8px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d9dfdf;
+    background: #fffdf9;
+    border-radius: 8px;
+    outline: none;
+    color: var(--text);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(145, 182, 212, 0.15);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* ==========================
+   GIFT
+========================== */
+
+.gift-card {
+    padding: 25px 20px;
+    margin: 25px 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.gift-top {
+    background: var(--blue-light);
+    padding: 20px;
+    margin: -25px -20px 25px;
+}
+
+.gift-top p {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.gift-top h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.bank-logo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.account-name {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.gift-card h3 {
+    font-size: 24px;
+    margin: 12px 0 20px;
+    letter-spacing: 2px;
+}
+
+.address-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.address-card p {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.address-card .open-button {
+    margin-top: 20px;
+}
+
+.gift-address {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--blue-light);
+    animation: contentEnter 0.6s ease;
+}
+
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gallery-item {
+    background: white;
+    padding: 7px;
+    border: 1px solid var(--line);
+    box-shadow: 0 5px 15px var(--shadow);
+    overflow: hidden;
+}
+
+.gallery-item:nth-child(even) {
+    transform: translateY(20px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+
+/* ==========================
+   CLOSING
+========================== */
+
+.closing-content {
+    text-align: center;
+    overflow: hidden;
+}
+
+.closing-flower {
+    width: 200px;
+    margin: -20px auto 20px;
+}
+
+.closing-photo {
+    width: 85%;
+    margin: 25px auto;
+    padding: 8px;
+    background: white;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.closing-photo img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.closing-content .couple-name {
+    font-size: 55px;
+}
+
+.closing-text,
+.closing-prayer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+
+/* ==========================
+   BOTTOM NAV
+========================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 4px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 253, 248, 0.96);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -5px 20px rgba(60, 80, 100, 0.08);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-item {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #9aa9b5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 2px;
+    transition: 0.3s;
+}
+
+.nav-icon {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.nav-item small {
+    font-size: 9px;
+}
+
+.nav-item.active {
+    color: var(--blue-dark);
+    transform: translateY(-3px);
+}
+
+.nav-item.active .nav-icon {
+    color: var(--blue-dark);
+}
+
+
+/* ==========================
+   FLOATING BUTTONS
+========================== */
+
+.music-button,
+.whatsapp-button {
+    position: fixed;
+    z-index: 101;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-dark);
+    color: white;
+    border: 1px solid white;
+    box-shadow: 0 5px 15px var(--shadow);
+    text-decoration: none;
+}
+
+.music-button {
+    top: 15px;
+    right: max(15px, calc((100vw - 480px) / 2 + 15px));
+}
+
+.whatsapp-button {
+    bottom: 95px;
+    right: max(15px, calc((100vw - 480px) / 2 + 15px));
+    font-size: 20px;
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (min-width: 481px) {
+    .cover-page {
+        padding: 35px;
+    }
+
+    .cover-paper {
+        max-width: 430px;
+    }
+
+    .main-app {
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 360px) {
+    .cover-frame {
+        min-height: 570px;
+        padding: 20px 10px;
+    }
+
+    .couple-name {
+        font-size: 46px;
+    }
+
+    .cover-photo {
+        width: 160px;
+        height: 220px;
+    }
+
+    .page-content {
+        padding: 25px 16px 35px;
+    }
+
+    .countdown span {
+        font-size: 23px;
+    }
+
+    .nav-item small {
+        font-size: 8px;
+    }
+
+    .nav-icon {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================
+   SLOW FLOATING DAISY
+========================= */
+
+.floating-daisies {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-flower {
+    position: absolute;
+    object-fit: contain;
+    opacity: 0.75;
+    pointer-events: none;
+    animation: daisyFloat 8s ease-in-out infinite;
+}
+
+/* Bunga pojok kanan atas */
+.flower-one {
+    width: 145px;
+    top: 85px;
+    right: -38px;
+    animation-delay: 0s;
+}
+
+/* Bunga kecil sisi kiri */
+.flower-two {
+    width: 105px;
+    top: 380px;
+    left: -35px;
+    animation-delay: 2s;
+}
+
+/* Bunga bagian kanan bawah */
+.flower-three {
+    width: 155px;
+    bottom: 180px;
+    right: -45px;
+    animation-delay: 1s;
+}
+
+/* Bunga tambahan di sisi kiri */
+.flower-four {
+    width: 90px;
+    top: 850px;
+    right: -25px;
+    animation-delay: 3s;
+}
+
+@keyframes daisyFloat {
+
+    0%, 100% {
+        transform: translateY(0px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(6deg);
+    }
+}
